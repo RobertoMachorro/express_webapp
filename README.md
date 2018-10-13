@@ -15,3 +15,9 @@ This was initially generated using the express command as follows:
 ## Running
    
      $ DEBUG=express-webapp:* npm start
+
+## Demo
+
+Try the demo at Heroku:
+
+     https://express-webapp-demo.herokuapp.com
