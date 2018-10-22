@@ -43,7 +43,7 @@ router.get('/multiply/:n1/:n2', [
 			result: n1 * n2
 		})
 	} catch (error) {
-		var errors = { errors: error.array() }
+		const errors = { errors: error.array() }
 		console.error(req.url, errors)
 		res.status(422).json(errors)
 	}
