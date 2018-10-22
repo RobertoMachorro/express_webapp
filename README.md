@@ -27,3 +27,10 @@ Try the demo at Heroku:
 ## Customizing
 
 Fork or branch this project, then change all *express-webapp* references to your application's name (optional). Now you are ready to add views, controllers, images, etc.
+
+## Validation and JSON Example
+
+Calc (/controllers/calc.js), shows how to handle Express parameters, validation and JSON output.
+
+https://express-validator.github.io/docs/index.html
+https://github.com/chriso/validator.js
