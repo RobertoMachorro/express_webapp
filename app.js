@@ -3,6 +3,7 @@ const express = require('express')
 const path = require('path')
 const cookieParser = require('cookie-parser')
 const logger = require('morgan')
+const uuidv4 = require('uuid/v4')
 const session = require('express-session')
 
 const indexRouter = require('./controllers/index')
@@ -24,7 +25,10 @@ app.use(session({
 	secret: 'expressive we bapp',
 	resave: false,
 	saveUninitialized: true,
-	cookie: { secure: app.get('env') === 'production' }
+	cookie: { secure: app.get('env') === 'production' },
+	genid: function(req) {
+		return uuidv4()
+	}
 }))
 
 // controllers
