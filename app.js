@@ -26,7 +26,7 @@ app.use(session({
 	secret: 'expressive we bapp',
 	resave: false,
 	saveUninitialized: true,
-	cookie: { secure: app.get('env') === 'production' },
+	cookie: { secure: false },
 	genid: function(req) {
 		return uuidv4()
 	},
