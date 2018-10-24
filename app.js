@@ -5,7 +5,7 @@ const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const uuidv4 = require('uuid/v4')
 const session = require('express-session')
-const filestore = require('session-file-store')(session)
+const MemoryStore = require('memorystore')(session)
 
 const indexRouter = require('./controllers/index')
 const usersRouter = require('./controllers/users')
@@ -30,7 +30,9 @@ app.use(session({
 	genid: function(req) {
 		return uuidv4()
 	},
-	store: new filestore()
+	store: new MemoryStore({
+		checkPeriod: 86400000 // prune expired entries every 24h
+	})
 }))
 
 // controllers
