@@ -6,6 +6,7 @@ const logger = require('morgan')
 const uuidv4 = require('uuid/v4')
 const session = require('express-session')
 const MemoryStore = require('memorystore')(session)
+const models = require('./models')
 
 const indexRouter = require('./controllers/index')
 const usersRouter = require('./controllers/users')
@@ -34,6 +35,7 @@ app.use(session({
 		checkPeriod: 86400000 // prune expired entries every 24h
 	})
 }))
+app.models = models
 
 // controllers
 app.use('/', indexRouter)
