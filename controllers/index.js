@@ -1,3 +1,4 @@
+const models = require('../models')
 const express = require('express')
 const router = express.Router()
 
@@ -8,6 +9,13 @@ router.get('/', function(req, res, next) {
 		title: 'Express WebApp',
 		sid: req.sessionID,
 		views: req.session.views
+	})
+})
+
+router.get('/list', function(req, res, next) {
+	models.User.findAll().then(users => {
+		console.log('Created on', models.sequelize.createstamp)
+		res.json(users)
 	})
 })
 
