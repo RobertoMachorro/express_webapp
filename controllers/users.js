@@ -1,3 +1,4 @@
+const models = require('../models')
 const express = require('express')
 const router = express.Router()
 
@@ -7,8 +8,9 @@ router.get('/', function(req, res, next) {
 })
 
 router.get('/list', function(req, res, next) {
-	req.app.models.User.findAll().then(users => {
-		res.send(users)
+	models.User.findAll().then(users => {
+		console.log('Created on', models.sequelize.createstamp)
+		res.json(users)
 	})
 })
 
