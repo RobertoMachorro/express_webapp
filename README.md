@@ -32,3 +32,7 @@ Try the [demo at Heroku](https://express-webapp-demo.herokuapp.com).
 ## Customizing
 
 Fork or branch this project, then change all *express-webapp* references to your application's name (optional). Now you are ready to add views, controllers, images, etc. Each instance needs its own config/config.json, for database configuration; Copy a starter from config_.json template.
+
+When working with databases, in particular between different environments. It's best to configure the *DATABASE_URL* environment variable.
+
+	[postgresql|mysql]://[user[:password]@][netloc][:port][/dbname][?param1=value1&...]
