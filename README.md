@@ -36,3 +36,10 @@ Fork or branch this project, then change all *express-webapp* references to your
 When working with databases, in particular between different environments. It's best to configure the *DATABASE_URL* environment variable.
 
 	[postgresql|mysql]://[user[:password]@][netloc][:port][/dbname][?param1=value1&...]
+
+When adding Models and Seeds, make sure you migrate and run seeds as needed.
+
+## Notes
+
+* This project is a compilation of multiple projects. Care has been taken to standardize as much as possible, but stuff may still be patchy looking.
+* Production has been tested in Heroku / AWS with no issues, however, a database enviroment must be prior setup.
